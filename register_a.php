@@ -22,7 +22,7 @@
     // $final_file=str_replace(' ','-',$new_file_name);
     // if(move_uploaded_file($file_loc,$folder.$final_file))
     // {
-        $query="INSERT INTO accounts(username, password,fullname) VALUES ('$username', '$pass', 'abc')"; //md5($pass)
+        $query="INSERT INTO accounts(username, password, fullname) VALUES ('$username', md5($pass), '_full name_')"; //md5($pass)
         $sql=mysqli_query($conn,$query) or die("Could Not Perform the Query");
         header ("Location: login.php?status=success");
     // }

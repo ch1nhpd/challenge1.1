@@ -1,3 +1,11 @@
+<?php
+        session_start();
+        if(!isset($_SESSION["username"])){
+            header("Location: login.php");
+            exit();
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +24,7 @@
 </head>
 <body>
 <div >
-    <?php
-        session_start();
-        if(!isset($_SESSION["username"])){
-            header("Location: login.php");
-            exit();
-        }
-    ?>
+    
     <p class="hint-text"><br><b>Welcome </b><?php echo $_SESSION["username"] ?></p>
     <form action="addTask.php" method="post" enctype="multipart/form-data">
 		<h2>Task</h2>

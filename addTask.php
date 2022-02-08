@@ -12,7 +12,7 @@
 
             $username = $_SESSION["username"];
             $query .= "INSERT INTO acc_task(username,task_id) VALUES ('$username',@last_task_id);";
-echo $query;
+//echo $query;
             $sql=mysqli_multi_query($conn,$query) or die("Could Not Perform the Query");
             
             header ("Location: home.php?status=addSuccess");
